@@ -11,16 +11,10 @@
 <p>When you open Lexify from the text selection menu, the share sheet, the Quick Settings tile or the copy bubble, the text is passed to the on-device AI model. Neither the text nor the generated result leaves your device, and the app does not keep a history of either after the popup is closed.</p>
 
 <h2>Downloading the AI model</h2>
-<p>On first use the app downloads the LFM2 language model (about 430 MB) from servers operated by Liquid AI (<code>leap.liquid.ai</code>) and Hugging Face (<code>huggingface.co</code>). Like any download, these requests reveal technical information such as your IP address, device and operating-system details to those servers. No text you process is included. That information is handled by those companies under their own policies:
-<a href="https://www.liquid.ai/privacy-policy">Liquid AI Privacy Policy</a>,
-<a href="https://huggingface.co/privacy">Hugging Face Privacy Policy</a>.
-After the download, the app works offline.</p>
+<p>On first use the app downloads the LFM2 language model (about 450–700 MB, depending on the model you choose) directly from Hugging Face (<code>huggingface.co</code>) using Android's system download manager, which shows the download progress notification. Like any download, this request reveals technical information such as your IP address and device details to Hugging Face. No text you process is included. That information is handled by Hugging Face under its own <a href="https://huggingface.co/privacy">Privacy Policy</a>. The model is created by Liquid AI; Lexify does not contact Liquid AI's servers. After the download, the app works offline.</p>
 
 <h2>Copy bubble (Accessibility Service)</h2>
 <p>The copy bubble is optional and off by default. If you turn it on, Lexify uses Android's Accessibility Service API to receive accessibility events from other apps: the labels and IDs of buttons and menu items you tap, and the text of notifications and system announcements. These events are used only on your device, only to recognise a "Copy" action or a "Copied" confirmation, so that a Lexify shortcut can be shown for a few seconds. Lexify reads your clipboard only after you tap that shortcut. Accessibility data is not stored, logged, collected or shared. You can turn the service off at any time in Settings › Accessibility.</p>
-
-<h2>Notifications</h2>
-<p>The app asks for notification permission only to show the progress of the model download.</p>
 
 <h2>Reporting AI responses</h2>
 <p>Each AI response has a "Report" button. It opens your own email app with a prefilled message to the developer that includes the response. Nothing is sent unless you choose to send that email yourself. Emails you send are used only to review the report and improve the app, and are not shared with third parties.</p>
