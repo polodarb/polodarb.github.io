@@ -5,7 +5,7 @@
 <p class="meta">Last updated: October 19, 2026</p>
 <hr>
 <h2>Summary</h2>
-<p>Lexify ("the app") rewrites and explains text with an AI model that runs entirely on your device. <b>The text you select, share or copy into Lexify, and the AI responses, are processed only on your device. They are never sent to the developer or to any cloud service.</b> The developer does not collect, store or sell any personal data. The app contains no analytics, advertising or crash-reporting SDKs.</p>
+<p>Lexify ("the app") rewrites and explains text with an AI model that runs entirely on your device. <b>The text you select, share or copy into Lexify, and the AI responses, are processed only on your device. They are never sent to the developer or to any cloud service.</b> To fix bugs and improve the app, Lexify sends crash reports and, unless you turn it off, anonymous usage statistics through Google Firebase. These never include your text or the AI responses. The app contains no advertising, does not use the advertising ID, and the developer does not sell any data.</p>
 
 <h2>Text you process</h2>
 <p>When you open Lexify from the text selection menu, the share sheet, the Quick Settings tile or the copy bubble, the text is passed to the on-device AI model. Neither the text nor the generated result leaves your device, and the app does not keep a history of either after the popup is closed.</p>
@@ -13,14 +13,23 @@
 <h2>Downloading the AI model</h2>
 <p>On first use the app downloads the LFM2 language model (about 450–700 MB, depending on the model you choose) directly from Hugging Face (<code>huggingface.co</code>) using Android's system download manager, which shows the download progress notification. Like any download, this request reveals technical information such as your IP address and device details to Hugging Face. No text you process is included. That information is handled by Hugging Face under its own <a href="https://huggingface.co/privacy">Privacy Policy</a>. The model is created by Liquid AI; Lexify does not contact Liquid AI's servers. After the download, the app works offline.</p>
 
+<h2>Crash reports and usage statistics</h2>
+<p>Lexify uses two Google Firebase services, with Google acting as a data processor for the developer:</p>
+<ul>
+<li><b>Firebase Crashlytics</b> (always on). When the app crashes or a model fails to load, a report is sent with the error stack trace, the app version, device model, Android version, processor model and supported processor features, free memory and disk space, and a random installation identifier. Crash reports are kept for 90 days.</li>
+<li><b>Google Analytics for Firebase</b> (on by default, can be turned off). Lexify records which features are used and how well the on-device model performs, for example: that a model was downloaded or loaded and how long it took, which preset (such as "Proofread") was run, how many tokens were processed and how fast, and whether a result was copied or inserted. Analytics also records basic device information, an app-instance identifier and an approximate location (country/city) derived from your IP address; the IP address itself is not stored. Statistics are kept for up to 14 months.</li>
+</ul>
+<p><b>Neither service ever receives the text you process, the AI responses or the contents of your clipboard.</b> The advertising ID and Android ID are not collected, and the data is not used for advertising or shared with advertisers.</p>
+<p>You can turn usage statistics off at any time with the "Anonymous statistics" switch on the app's home screen. Firebase processes this data under the <a href="https://firebase.google.com/support/privacy">Firebase Privacy and Security</a> terms and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. To ask for data linked to your installation to be deleted, contact the developer (see below) or reinstall the app, which resets its identifiers.</p>
+
 <h2>Copy bubble (Accessibility Service)</h2>
-<p>The copy bubble is optional and off by default. If you turn it on, Lexify uses Android's Accessibility Service API to receive accessibility events from other apps: the labels and IDs of buttons and menu items you tap, and the text of notifications and system announcements. These events are used only on your device, only to recognise a "Copy" action or a "Copied" confirmation, so that a Lexify shortcut can be shown for a few seconds. Lexify reads your clipboard only after you tap that shortcut. Accessibility data is not stored, logged, collected or shared. You can turn the service off at any time in Settings › Accessibility.</p>
+<p>The copy bubble is optional and off by default. If you turn it on, Lexify uses Android's Accessibility Service API to receive accessibility events from other apps: the labels and IDs of buttons and menu items you tap, and the text of notifications and system announcements. These events are used only on your device, only to recognise a "Copy" action or a "Copied" confirmation, so that a Lexify shortcut can be shown for a few seconds. Lexify reads your clipboard only after you tap that shortcut. Accessibility data is not stored, logged, collected or shared, and is never included in crash reports or statistics. You can turn the service off at any time in Settings › Accessibility.</p>
 
 <h2>Reporting AI responses</h2>
 <p>Each AI response has a "Report" button. It opens your own email app with a prefilled message to the developer that includes the response. Nothing is sent unless you choose to send that email yourself. Emails you send are used only to review the report and improve the app, and are not shared with third parties.</p>
 
 <h2>Children</h2>
-<p>Lexify is not directed at children under 13 and does not knowingly collect any data from them.</p>
+<p>Lexify is not directed at children under 13 and does not knowingly collect personal data from them.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the updated version will be published on this page with a new date.</p>
